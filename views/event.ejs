@@ -3,9 +3,9 @@
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 	<title>Unhangout</title>
-	<!-- <link rel="stylesheet" href="/public/css/bootstrap.css" type="text/css" media="screen"> -->
-	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap.no-responsive.no-icons.min.css" rel="stylesheet">
-	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+	<link rel="stylesheet" href="/public/css/bootstrap.css" type="text/css" media="screen">
+<!-- 	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap.no-responsive.no-icons.min.css" rel="stylesheet">
+ -->	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 	
 	<link href="/public/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
 	<link href="/public/css/print.css" media="print" rel="stylesheet" type="text/css" />
@@ -199,8 +199,8 @@
 						<p>There are currently no hangout urls available on the server. Sessions started when there are no urls available will fall back to the callback method of hangout starting, which requires the first person to join a session to create the hangout. This is not desireable; we strongly recommend you farm some hangout urls by clicking "farm" below. For this process to work, your google acount must have "create video calls for events" set in your google calendar account settings.
 					</div>
 					<div class="modal-footer">
-						<a class="btn btn-success" id="farm-urls" href="/hangout-farming" target="_blank">Farm</a>
-						<a href="#" class="btn btn-primary" id="dismiss-farming-warning" data-dismiss='modal'>Dismiss</a>
+						<button type="button" class="btn btn-primary" id="farm-urls" href="/hangout-farming" target="_blank">Farm</a>
+						<button type="button" class="btn btn-default" id="dismiss-farming-warning" data-dismiss='modal'>Dismiss</a>
 					</div>
 				</div>
 
