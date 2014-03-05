@@ -7,9 +7,12 @@ $navbar-li = #DBF2FD;
 $navbar-li-bgcolor = #205877;
 $event-links = $navbar;
 
-body {
-    padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-  }
+html, body {
+    padding-top: 30px; /* 60px to make the container go all the way to the bottom of the topbar */
+    margin: 0;
+    height: 100%;
+    overflow-y: hidden;
+}
 
 .btn-primary {
 	background: $navbar;	
@@ -51,10 +54,55 @@ a.dropdown-toggle {
 	height: auto;
 }
 
+/*--------------- Event Styles -------------------- */
+
+.event-box {
+    max-width: 1000px;
+    margin-top: -10px;
+    display:block;
+    height: 100%;
+}
+
+#left {
+	padding-left: 0px;
+	padding-right: 0px;
+	border-right: 1px solid #aaa;
+	box-shadow: 3px 3px 3px #aaa;
+	z-index: 20;
+	overflow-y: auto;
+}
+
+#video-embed .player {
+  height: 360px;
+
+  table {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+#center {
+	padding-left: 0px;
+	padding-right: 0px;
+ 	height: 100%;
+    min-height: 100%;
+    display: block;
+}
+
+#main-right {
+	height: 100%;
+    min-height: 100%;
+    display: block;
+	z-index: 10;
+	overflow: hidden;
+	background-color: $background-light;
+}
+
+/*-------------------------------------------------------------------*/
+
 
 #app {
 	position: absolute;
-	
 	top: 40px;
 	bottom: 0px;
 	width: 940px;
@@ -78,59 +126,7 @@ a.dropdown-toggle {
 }
 
 
-#main-right {
-	position: absolute;
-	height: 100%;
-
-	box-sizing: border-box;
-	background-color: $background-light;
-	padding-left: 10px;
-
-	z-index: 10;
-
-	right: 20px;
-	left: 440px;
-
-	// &.bar {
-	// 	top: 40px;
-	// }
-
-	width: 550px;
-
-	overflow: hidden;
-}
-
-#left {
-	position: absolute;
-
-	box-sizing: border-box;
-
-	border-right: 1px solid #aaa;
-	box-shadow: 3px 3px 3px #aaa;
-
-	z-index: 20;
-
-	bottom: 0px;
-	top: 0px;
-
-	overflow-y: auto;
-  padding-bottom: 40px;
-}
-
-#main {
-/*	border: 1px solid purple;*/
-	height: 100%;
-/*	background-color: #eee;*/
-}
-
 #presence-gutter {
-	width: 150px;
-
-	position: absolute;
-	top: 0px;
-	right: 0px;
-	bottom: 0px;
-
 	// overflow-y: scroll;
 	// overflow-x: visible;
 
@@ -392,8 +388,6 @@ a.dropdown-toggle {
 
 	box-sizing: border-box;
 	
-
-	width: 430px;
 	height: 75px;
 
 	overflow: hidden;
@@ -447,13 +441,6 @@ a.dropdown-toggle {
 		color: $background;
 		font-style: italic;
 	}
-
-
-	float: left;
-
-	margin-left: 20px;
-
-	padding: 5px;
 
 	.label {
 		margin-left: 5px;
@@ -636,53 +623,47 @@ a.dropdown-toggle {
 		height: 32px;
 		width: 50%;
 		background-color: rgba(66, 94, 97, 0.5);
-	}
-}
-
-#chat-input-region {
-		position: absolute;
-		bottom: 0px;
-		left: 0px;
-		right: 55px;
-
-		width: 370px;
-		height: 35px;
-
-		padding-left: 10px;
-
-		background-color: $background-light;
-
-		input {
-			width: 360px;
-		}
+	}	
 }
 
 #chat {
-	overflow-y: hidden;
+	overflow-y: auto;
 	overflow-x: visible;
+	height: 90%;
+    min-height: 90%;
+    display: block;
 
-	
+	#chat-input-region {
+		background-color: #f5f5f5; 
+
+		input {
+			position: absolute;
+			bottom: 0px;
+			left: 2.5%;
+			right: 2.5%;
+			height: 30px;
+			width: 95%;
+			height: 25px;
+		}
+	}
+
 	#chat-container {
-		padding-left: 5px;
-
-		bottom: 40px;
-		margin-left: 0px;
-
 		position: absolute;
 		top: 0px;
 		bottom: 0px;
 		left: 0px;
-		right: 150px;
+		right: 0px;
 		overflow-y: auto;
 
 		#chat-list-container {
 			height: auto;
 			width: auto;
 
-			margin: 0px 0px 45px 0px;
+			margin: 0px 0px 10px 0px;
 
 			.chat-message {
-        word-wrap: break-word;
+        		
+        		word-wrap: break-word;
 
 				&.past {
 					opacity: 0.3;
@@ -731,13 +712,7 @@ a.dropdown-toggle {
 	z-index: 1000;
 }
 
-#video-embed .player {
-  height: 360px;
-  table {
-    width: 100%;
-    height: 100%;
-  }
-}
+
 
 .sync-indicator {
   display: inline-block;
